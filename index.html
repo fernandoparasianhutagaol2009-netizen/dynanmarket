@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Dynan Marketplace Login</title>
+<title>Login Dynan Marketplace</title>
 
 <style>
 
@@ -10,32 +10,32 @@ background:black;
 color:white;
 font-family:sans-serif;
 text-align:center;
-padding-top:120px;
-}
-
-.login{
-background:#111;
-padding:40px;
-border-radius:15px;
-width:300px;
-margin:auto;
-box-shadow:0 0 20px cyan;
+margin-top:100px;
 }
 
 input{
-width:90%;
 padding:10px;
-margin:10px;
-border-radius:8px;
+width:200px;
+border-radius:6px;
 border:none;
 }
 
 button{
 padding:10px 20px;
-background:cyan;
 border:none;
 border-radius:8px;
+background:#0d6efd;
+color:white;
 cursor:pointer;
+}
+
+button:hover{
+background:#0a58ca;
+}
+
+a{
+color:#4da3ff;
+text-decoration:none;
 }
 
 </style>
@@ -44,20 +44,21 @@ cursor:pointer;
 
 <body>
 
-<div class="login">
+<h2>Login Dynan Marketplace</h2>
 
-<h2>Dynan Marketplace 🔐</h2>
+<input type="text" id="user" placeholder="Username">
+<br><br>
 
-<input type="text" id="user" placeholder="Username"><br>
-<input type="password" id="pass" placeholder="Password"><br>
+<input type="password" id="pass" placeholder="Password">
+<br><br>
 
 <button onclick="login()">Login</button>
 
+<br><br>
+
 <p>Belum punya akun?</p>
 
-<a href="register.html" style="color:cyan">Buat Akun</a>
-
-</div>
+<a href="register.html">Buat Akun</a>
 
 <script>
 
@@ -66,13 +67,13 @@ function login(){
 let u=document.getElementById("user").value
 let p=document.getElementById("pass").value
 
-// akun admin
+// login admin
 if(u=="dynannotdev" && p=="11092009"){
 window.location.href="admin.html"
 return
 }
 
-// akun member
+// login member
 let users=JSON.parse(localStorage.getItem("users") || "[]")
 
 let found=users.find(x=>x.username==u && x.password==p)
@@ -80,11 +81,12 @@ let found=users.find(x=>x.username==u && x.password==p)
 if(found){
 window.location.href="market.html"
 }else{
-alert("Akun tidak ditemukan")
+alert("Username atau Password salah")
 }
 
 }
 
 </script>
+
 </body>
 </html>
