@@ -1,74 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Market Dynan</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynan Marketplace</title>
 
 <style>
 
 body{
+background:black;
+color:white;
 font-family:sans-serif;
-background:#f2f2f2;
-margin:0;
-padding:20px;
 text-align:center;
 }
 
-.box{
-background:white;
-width:95%;
-max-width:700px;
-margin:auto;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-h2{
-font-size:32px;
-}
-
-button{
-padding:15px;
-font-size:18px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-margin-top:10px;
-width:100%;
-}
-
-.logout{
-background:red;
-color:white;
-}
-
-.buy{
-background:#2196F3;
-color:white;
+h1{
+font-size:34px;
+margin-top:30px;
 }
 
 .channel{
 background:#25D366;
-color:white;
-}
-
-.product{
-border:1px solid #ddd;
-border-radius:12px;
-padding:20px;
-margin-top:20px;
-text-align:left;
-}
-
-.product h4{
-font-size:22px;
-margin:0;
-}
-
-.product p{
+padding:15px 20px;
+border:none;
+border-radius:10px;
 font-size:18px;
+color:white;
+cursor:pointer;
+margin-top:10px;
+}
+
+.produk{
+background:#111;
+width:90%;
+max-width:650px;
+margin:35px auto;
+padding:30px;
+border-radius:12px;
+}
+
+.list a{
+display:block;
+background:#0d6efd;
+padding:18px;
+margin:10px 0;
+border-radius:10px;
+color:white;
+text-decoration:none;
+font-size:18px;
+}
+
+.logout{
+position:fixed;
+top:20px;
+right:20px;
+background:red;
+border:none;
+padding:10px 15px;
+color:white;
+border-radius:8px;
+cursor:pointer;
 }
 
 </style>
@@ -76,68 +65,70 @@ font-size:18px;
 
 <body>
 
-<div class="box">
-
-<h2>Market Dynan</h2>
-
 <button class="logout" onclick="logout()">Logout</button>
 
-<h3>Produk Kami</h3>
-
-<div class="product">
-<h4>Panel Bot</h4>
-<p>Harga: Rp5.000</p>
-<button class="buy">Beli Sekarang</button>
-</div>
-
-<div class="product">
-<h4>Sewa Bot WhatsApp 1 Hari</h4>
-<p>Harga: Rp5.000</p>
-<button class="buy">Beli Sekarang</button>
-</div>
-
-<div class="product">
-<h4>Sewa Bot WhatsApp 7 Hari</h4>
-<p>Harga: Rp15.000</p>
-<button class="buy">Beli Sekarang</button>
-</div>
-
-<div class="product">
-<h4>Sewa Bot WhatsApp 30 Hari</h4>
-<p>Harga: Rp40.000</p>
-<button class="buy">Beli Sekarang</button>
-</div>
-
-<div class="product">
-<h4>Script Bot WhatsApp</h4>
-<p>Harga: Rp15.000</p>
-<button class="buy">Beli Sekarang</button>
-</div>
-
-<div class="product">
-<h4>Jasa Pasang Bot</h4>
-<p>Harga: Rp10.000</p>
-<button class="buy">Beli Sekarang</button>
-</div>
-
-<div class="product">
-<h4>Jasa Buat Website</h4>
-<p>Harga: Rp25.000</p>
-<button class="buy">Beli Sekarang</button>
-</div>
-
-<h3>Saluran Kami</h3>
+<h1>Dynan Marketplace 🛍</h1>
 
 <a href="https://whatsapp.com/channel/0029VbCjQw8GE56pxtLIQa1c" target="_blank">
-<button class="channel">Gabung Saluran WhatsApp</button>
+<button class="channel">📢 Join Saluran WhatsApp</button>
 </a>
 
+
+<div class="produk">
+<h3>Sewa Bot WA Grup</h3>
+<div class="list">
+<a href="checkout.html">1 Bulan - Rp10.000</a>
+<a href="checkout.html">2 Bulan - Rp20.000</a>
+<a href="checkout.html">3 Bulan - Rp30.000</a>
+<a href="checkout.html">4 Bulan - Rp40.000</a>
+<a href="checkout.html">5 Bulan - Rp50.000</a>
+<a href="checkout.html">Permanen - Rp300.000</a>
 </div>
+</div>
+
+
+<div class="produk">
+<h3>Jadi Bot WA Grup</h3>
+<div class="list">
+<a href="checkout.html">1 Bulan - Rp5.000</a>
+<a href="checkout.html">2 Bulan - Rp10.000</a>
+<a href="checkout.html">3 Bulan - Rp15.000</a>
+<a href="checkout.html">4 Bulan - Rp20.000</a>
+<a href="checkout.html">5 Bulan - Rp25.000</a>
+<a href="checkout.html">Permanen - Rp150.000</a>
+</div>
+</div>
+
+
+<div class="produk">
+<h3>Panel Pterodactyl</h3>
+<div class="list">
+<a href="checkout.html">1GB - Rp1.000</a>
+<a href="checkout.html">2GB - Rp2.000</a>
+<a href="checkout.html">3GB - Rp3.000</a>
+<a href="checkout.html">4GB - Rp4.000</a>
+<a href="checkout.html">5GB - Rp5.000</a>
+<a href="checkout.html">10GB - Rp10.000</a>
+<a href="checkout.html">Unlimited - Rp12.000</a>
+<a href="checkout.html">Reseller - Rp15.000</a>
+<a href="checkout.html">Admin Panel - Rp20.000</a>
+</div>
+</div>
+
+
+<div class="produk">
+<h3>Nokos All Negara</h3>
+<div class="list">
+<a href="checkout.html">Indonesia - Rp5.000</a>
+<a href="https://wa.me/6283180072584">Negara Lain Hubungi Admin</a>
+</div>
+</div>
+
 
 <script>
 
 function logout(){
-window.location.href="index.html"
+window.location="index.html"
 }
 
 </script>
