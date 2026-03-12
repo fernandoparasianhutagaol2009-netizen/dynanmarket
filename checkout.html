@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Checkout</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Checkout</h2>
+
+<p id="product"></p>
+<p id="price"></p>
+
+<h3>Scan QRIS</h3>
+<img src="qris.png" width="250">
+
+<p>Setelah bayar hubungi admin</p>
+
+<h3>Contact Admin</h3>
+
+<a href="https://wa.me/6283180072584">WhatsApp</a><br>
+<a href="https://t.me/dynankb">Telegram</a>
+
+<script>
+document.getElementById("product").innerText="Produk: "+localStorage.getItem("product")
+document.getElementById("price").innerText="Harga: Rp"+localStorage.getItem("price")
+</script>
+
+</body>
+</html>

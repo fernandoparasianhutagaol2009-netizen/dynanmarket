@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynan Marketplace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Dynan Marketplace 🛍</h1>
+
+<h2>Produk</h2>
+
+<h3>Sewa Bot Grup</h3>
+<button onclick="buy('Sewa Bot 1 Bulan','10000')">Beli Rp10.000</button>
+
+<h3>Jadi Bot Grup</h3>
+<button onclick="buy('Jadi Bot 1 Bulan','5000')">Beli Rp5.000</button>
+
+<h3>Panel Pterodactyl</h3>
+<button onclick="buy('Panel Unlimited','12000')">Beli Rp12.000</button>
+
+<h3>Nokos Indonesia</h3>
+<button onclick="buy('Nokos Indonesia','5000')">Beli Rp5.000</button>
+
+<script>
+function buy(product,price){
+
+localStorage.setItem("product",product)
+localStorage.setItem("price",price)
+
+window.location.href="checkout.html"
+
+}
+</script>
+
+</body>
+</html>
