@@ -1,87 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login Dynan Marketplace</title>
+<title>Login Market</title>
 
 <style>
-
 body{
-background:black;
-color:white;
 font-family:sans-serif;
+background:#f2f2f2;
 text-align:center;
-margin-top:100px;
+}
+
+.box{
+background:white;
+width:90%;
+max-width:400px;
+margin:auto;
+margin-top:120px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 input{
+width:90%;
 padding:10px;
-width:200px;
+margin:5px;
 border-radius:6px;
-border:none;
+border:1px solid #ccc;
 }
 
 button{
-padding:10px 20px;
+padding:10px 15px;
+background:#4CAF50;
+color:white;
 border:none;
 border-radius:8px;
-background:#0d6efd;
-color:white;
 cursor:pointer;
 }
-
-button:hover{
-background:#0a58ca;
-}
-
-a{
-color:#4da3ff;
-text-decoration:none;
-}
-
 </style>
-
 </head>
 
 <body>
 
-<h2>Login Dynan Marketplace</h2>
+<div class="box">
 
-<input type="text" id="user" placeholder="Username">
-<br><br>
+<h2>Login Market</h2>
 
-<input type="password" id="pass" placeholder="Password">
-<br><br>
+<input type="text" id="username" placeholder="Username"><br>
+<input type="password" id="password" placeholder="Password"><br>
 
 <button onclick="login()">Login</button>
 
-<br><br>
-
-<p>Belum punya akun?</p>
-
-<a href="register.html">Buat Akun</a>
+</div>
 
 <script>
 
 function login(){
 
-let u=document.getElementById("user").value
-let p=document.getElementById("pass").value
+let user=document.getElementById("username").value
+let pass=document.getElementById("password").value
 
-// login admin
-if(u=="dynannotdev" && p=="11092009"){
-window.location.href="admin.html"
-return
-}
+if(user=="admin" && pass=="12345"){
 
-// login member
-let users=JSON.parse(localStorage.getItem("users") || "[]")
-
-let found=users.find(x=>x.username==u && x.password==p)
-
-if(found){
 window.location.href="market.html"
+
 }else{
-alert("Username atau Password salah")
+
+alert("Username atau password salah")
+
 }
 
 }
