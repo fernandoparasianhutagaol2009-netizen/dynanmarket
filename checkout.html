@@ -2,28 +2,34 @@
 <html>
 <head>
 <title>Checkout</title>
-<link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body style="text-align:center;font-family:sans-serif">
 
 <h2>Checkout</h2>
 
-<p id="product"></p>
-<p id="price"></p>
+<p id="produk"></p>
+<p id="harga"></p>
 
 <h3>Scan QRIS</h3>
+
 <img src="qris.png" width="250">
 
 <p>Setelah bayar hubungi admin</p>
 
-<h3>Contact Admin</h3>
+<h4>Contact Admin</h4>
 
 <a href="https://wa.me/6283180072584">WhatsApp</a><br>
 <a href="https://t.me/dynankb">Telegram</a>
 
 <script>
-document.getElementById("product").innerText="Produk: "+localStorage.getItem("product")
-document.getElementById("price").innerText="Harga: Rp"+localStorage.getItem("price")
+
+document.getElementById("produk").innerText =
+"Produk: " + localStorage.getItem("product")
+
+document.getElementById("harga").innerText =
+"Harga: Rp" + localStorage.getItem("price")
+
 </script>
 
 </body>
