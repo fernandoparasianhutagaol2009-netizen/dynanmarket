@@ -18,67 +18,41 @@ h1{
 margin-top:40px;
 }
 
-h3{
-margin-top:40px;
-}
-
-hr{
-margin:40px auto;
-width:80%;
-border:1px solid #333;
-}
-
 .produk{
-margin-top:20px;
-}
-
-.paket{
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:10px;
-margin-top:15px;
-}
-
-button{
-width:230px;
-padding:12px;
-background:#0d6efd;
-border:none;
+margin:40px auto;
+width:90%;
+max-width:400px;
+background:#111;
+padding:20px;
 border-radius:10px;
+}
+
+.list a{
+display:block;
+background:#0d6efd;
 color:white;
-cursor:pointer;
-font-size:14px;
+text-decoration:none;
+padding:12px;
+margin:6px 0;
+border-radius:8px;
 transition:0.3s;
 }
 
-button:hover{
+.list a:hover{
 background:#0a58ca;
 transform:scale(1.05);
 }
 
-/* background bintang */
-
-.stars{
+.logout{
 position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-z-index:-1;
-}
-
-.star{
-position:absolute;
-width:2px;
-height:2px;
-background:white;
-animation:twinkle 2s infinite alternate;
-}
-
-@keyframes twinkle{
-from{opacity:0.2;}
-to{opacity:1;}
+top:15px;
+right:15px;
+background:red;
+border:none;
+color:white;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
 }
 
 </style>
@@ -87,97 +61,72 @@ to{opacity:1;}
 
 <body>
 
-<div class="stars" id="stars"></div>
+<button class="logout" onclick="logout()">Logout</button>
 
 <h1>Dynan Marketplace 🛍</h1>
 
 <h2>Produk Kami</h2>
 
+
 <div class="produk">
-
 <h3>1️⃣ Sewa Bot WA Grup</h3>
-
-<div class="paket">
-<button onclick="buy('Sewa Bot 1 Bulan','10000')">1 Bulan - Rp10.000</button>
-<button onclick="buy('Sewa Bot 2 Bulan','20000')">2 Bulan - Rp20.000</button>
-<button onclick="buy('Sewa Bot 3 Bulan','30000')">3 Bulan - Rp30.000</button>
-<button onclick="buy('Sewa Bot 4 Bulan','40000')">4 Bulan - Rp40.000</button>
-<button onclick="buy('Sewa Bot 5 Bulan','50000')">5 Bulan - Rp50.000</button>
-<button onclick="buy('Sewa Bot Permanen','300000')">Permanen - Rp300.000</button>
+<div class="list">
+<a href="checkout.html?produk=Sewa Bot 1 Bulan&harga=10000">1 Bulan - Rp10.000</a>
+<a href="checkout.html?produk=Sewa Bot 2 Bulan&harga=20000">2 Bulan - Rp20.000</a>
+<a href="checkout.html?produk=Sewa Bot 3 Bulan&harga=30000">3 Bulan - Rp30.000</a>
+<a href="checkout.html?produk=Sewa Bot 4 Bulan&harga=40000">4 Bulan - Rp40.000</a>
+<a href="checkout.html?produk=Sewa Bot 5 Bulan&harga=50000">5 Bulan - Rp50.000</a>
+<a href="checkout.html?produk=Sewa Bot Permanen&harga=300000">Permanen - Rp300.000</a>
+</div>
 </div>
 
-<hr>
 
+<div class="produk">
 <h3>2️⃣ Jadi Bot WA Grup</h3>
-
-<div class="paket">
-<button onclick="buy('Jadi Bot 1 Bulan','5000')">1 Bulan - Rp5.000</button>
-<button onclick="buy('Jadi Bot 2 Bulan','10000')">2 Bulan - Rp10.000</button>
-<button onclick="buy('Jadi Bot 3 Bulan','15000')">3 Bulan - Rp15.000</button>
-<button onclick="buy('Jadi Bot 4 Bulan','20000')">4 Bulan - Rp20.000</button>
-<button onclick="buy('Jadi Bot 5 Bulan','25000')">5 Bulan - Rp25.000</button>
-<button onclick="buy('Jadi Bot Permanen','150000')">Permanen - Rp150.000</button>
+<div class="list">
+<a href="checkout.html?produk=Jadi Bot 1 Bulan&harga=5000">1 Bulan - Rp5.000</a>
+<a href="checkout.html?produk=Jadi Bot 2 Bulan&harga=10000">2 Bulan - Rp10.000</a>
+<a href="checkout.html?produk=Jadi Bot 3 Bulan&harga=15000">3 Bulan - Rp15.000</a>
+<a href="checkout.html?produk=Jadi Bot 4 Bulan&harga=20000">4 Bulan - Rp20.000</a>
+<a href="checkout.html?produk=Jadi Bot 5 Bulan&harga=25000">5 Bulan - Rp25.000</a>
+<a href="checkout.html?produk=Jadi Bot Permanen&harga=150000">Permanen - Rp150.000</a>
+</div>
 </div>
 
-<hr>
 
+<div class="produk">
 <h3>3️⃣ Panel Pterodactyl</h3>
-
-<div class="paket">
-<button onclick="buy('Panel 1GB','1000')">1GB - Rp1.000</button>
-<button onclick="buy('Panel 2GB','2000')">2GB - Rp2.000</button>
-<button onclick="buy('Panel 3GB','3000')">3GB - Rp3.000</button>
-<button onclick="buy('Panel 4GB','4000')">4GB - Rp4.000</button>
-<button onclick="buy('Panel 5GB','5000')">5GB - Rp5.000</button>
-<button onclick="buy('Panel 10GB','10000')">10GB - Rp10.000</button>
-<button onclick="buy('Panel Unlimited','12000')">Unlimited - Rp12.000</button>
-<button onclick="buy('Reseller Panel','15000')">Reseller - Rp15.000</button>
-<button onclick="buy('Admin Panel','20000')">Admin Panel - Rp20.000</button>
+<div class="list">
+<a href="checkout.html?produk=Panel 1GB&harga=1000">1GB - Rp1.000</a>
+<a href="checkout.html?produk=Panel 2GB&harga=2000">2GB - Rp2.000</a>
+<a href="checkout.html?produk=Panel 3GB&harga=3000">3GB - Rp3.000</a>
+<a href="checkout.html?produk=Panel 4GB&harga=4000">4GB - Rp4.000</a>
+<a href="checkout.html?produk=Panel 5GB&harga=5000">5GB - Rp5.000</a>
+<a href="checkout.html?produk=Panel 10GB&harga=10000">10GB - Rp10.000</a>
+<a href="checkout.html?produk=Panel Unlimited&harga=12000">Unlimited - Rp12.000</a>
+<a href="checkout.html?produk=Panel Reseller&harga=15000">Reseller - Rp15.000</a>
+<a href="checkout.html?produk=Admin Panel&harga=20000">Admin Panel - Rp20.000</a>
+</div>
 </div>
 
-<hr>
 
+<div class="produk">
 <h3>4️⃣ Nokos All Negara</h3>
-
-<div class="paket">
-<button onclick="buy('Nokos Indonesia','5000')">Indonesia - Rp5.000</button>
-<button onclick="admin()">🌍 Negara Lain Hubungi Admin</button>
+<div class="list">
+<a href="checkout.html?produk=Nokos Indonesia&harga=5000">Indonesia - Rp5.000</a>
+<a href="https://wa.me/6283180072584">Negara Lain Hubungi Admin</a>
+</div>
 </div>
 
-</div>
 
 <script>
 
-function buy(product,price){
-
-localStorage.setItem("product",product)
-localStorage.setItem("price",price)
-
-window.location.href="checkout.html"
-
-}
-
-function admin(){
-window.open("https://wa.me/6283180072584")
-}
-
-/* efek bintang */
-
-let stars=document.getElementById("stars")
-
-for(let i=0;i<120;i++){
-
-let star=document.createElement("div")
-star.className="star"
-
-star.style.top=Math.random()*100+"%"
-star.style.left=Math.random()*100+"%"
-
-stars.appendChild(star)
-
+function logout(){
+alert("Logout berhasil")
+window.location.href="index.html"
 }
 
 </script>
 
 </body>
-  </html>
+</html>
