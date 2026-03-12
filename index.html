@@ -66,17 +66,19 @@ function login(){
 let u=document.getElementById("user").value
 let p=document.getElementById("pass").value
 
+// akun admin
 if(u=="dynannotdev" && p=="11092009"){
-window.location="admin.html"
+window.location.href="admin.html"
 return
 }
 
+// akun member
 let users=JSON.parse(localStorage.getItem("users") || "[]")
 
 let found=users.find(x=>x.username==u && x.password==p)
 
 if(found){
-window.location="market.html"
+window.location.href="market.html"
 }else{
 alert("Akun tidak ditemukan")
 }
