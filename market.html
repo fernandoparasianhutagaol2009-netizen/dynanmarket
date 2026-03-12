@@ -1,129 +1,156 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Dynan Marketplace</title>
+<title>Market Dynan</title>
 
 <style>
 
 body{
-margin:0;
 font-family:sans-serif;
-color:white;
+background:#f2f2f2;
 text-align:center;
-background:black;
-overflow-x:hidden;
+margin:0;
 }
 
-h1{
-margin-top:40px;
-}
-
-.produk{
-margin:40px auto;
+.box{
+background:white;
 width:90%;
 max-width:400px;
-background:#111;
+margin:auto;
+margin-top:40px;
 padding:20px;
 border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-.list a{
-display:block;
-background:#0d6efd;
-color:white;
-text-decoration:none;
-padding:12px;
-margin:6px 0;
+input{
+width:90%;
+padding:10px;
+margin:5px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+padding:10px 15px;
+border:none;
 border-radius:8px;
-transition:0.3s;
+cursor:pointer;
+margin:5px;
 }
 
-.list a:hover{
-background:#0a58ca;
-transform:scale(1.05);
+.login{
+background:#4CAF50;
+color:white;
 }
 
 .logout{
-position:fixed;
-top:15px;
-right:15px;
 background:red;
-border:none;
 color:white;
-padding:10px 15px;
+}
+
+.buy{
+background:#2196F3;
+color:white;
+}
+
+.channel{
+background:#25D366;
+color:white;
+}
+
+.product{
+border:1px solid #ddd;
 border-radius:8px;
-cursor:pointer;
+padding:10px;
+margin-top:10px;
 }
 
 </style>
-
 </head>
 
 <body>
 
+<!-- LOGIN -->
+<div class="box" id="loginBox">
+
+<h2>Login Market</h2>
+
+<input type="text" id="username" placeholder="Username">
+<br>
+<input type="password" id="password" placeholder="Password">
+<br>
+
+<button class="login" onclick="login()">Login</button>
+
+</div>
+
+<!-- MARKET -->
+<div class="box" id="marketBox" style="display:none">
+
+<h2>Market Dynan</h2>
+
 <button class="logout" onclick="logout()">Logout</button>
 
-<h1>Dynan Marketplace 🛍</h1>
+<h3>Produk</h3>
 
-<h2>Produk Kami</h2>
-
-
-<div class="produk">
-<h3>1️⃣ Sewa Bot WA Grup</h3>
-<div class="list">
-<a href="checkout.html?produk=Sewa Bot 1 Bulan&harga=10000">1 Bulan - Rp10.000</a>
-<a href="checkout.html?produk=Sewa Bot 2 Bulan&harga=20000">2 Bulan - Rp20.000</a>
-<a href="checkout.html?produk=Sewa Bot 3 Bulan&harga=30000">3 Bulan - Rp30.000</a>
-<a href="checkout.html?produk=Sewa Bot 4 Bulan&harga=40000">4 Bulan - Rp40.000</a>
-<a href="checkout.html?produk=Sewa Bot 5 Bulan&harga=50000">5 Bulan - Rp50.000</a>
-<a href="checkout.html?produk=Sewa Bot Permanen&harga=300000">Permanen - Rp300.000</a>
-</div>
+<div class="product">
+<h4>Panel Bot</h4>
+<p>Harga: Rp5.000</p>
+<button class="buy" onclick="beli('Panel Bot')">Beli</button>
 </div>
 
-
-<div class="produk">
-<h3>2️⃣ Jadi Bot WA Grup</h3>
-<div class="list">
-<a href="checkout.html?produk=Jadi Bot 1 Bulan&harga=5000">1 Bulan - Rp5.000</a>
-<a href="checkout.html?produk=Jadi Bot 2 Bulan&harga=10000">2 Bulan - Rp10.000</a>
-<a href="checkout.html?produk=Jadi Bot 3 Bulan&harga=15000">3 Bulan - Rp15.000</a>
-<a href="checkout.html?produk=Jadi Bot 4 Bulan&harga=20000">4 Bulan - Rp20.000</a>
-<a href="checkout.html?produk=Jadi Bot 5 Bulan&harga=25000">5 Bulan - Rp25.000</a>
-<a href="checkout.html?produk=Jadi Bot Permanen&harga=150000">Permanen - Rp150.000</a>
-</div>
+<div class="product">
+<h4>Sewa Bot WhatsApp</h4>
+<p>Harga: Rp10.000</p>
+<button class="buy" onclick="beli('Sewa Bot WhatsApp')">Beli</button>
 </div>
 
-
-<div class="produk">
-<h3>3️⃣ Panel Pterodactyl</h3>
-<div class="list">
-<a href="checkout.html?produk=Panel 1GB&harga=1000">1GB - Rp1.000</a>
-<a href="checkout.html?produk=Panel 2GB&harga=2000">2GB - Rp2.000</a>
-<a href="checkout.html?produk=Panel 3GB&harga=3000">3GB - Rp3.000</a>
-<a href="checkout.html?produk=Panel 4GB&harga=4000">4GB - Rp4.000</a>
-<a href="checkout.html?produk=Panel 5GB&harga=5000">5GB - Rp5.000</a>
-<a href="checkout.html?produk=Panel 10GB&harga=10000">10GB - Rp10.000</a>
-<a href="checkout.html?produk=Panel Unlimited&harga=12000">Unlimited - Rp12.000</a>
-<a href="checkout.html?produk=Panel Reseller&harga=15000">Reseller - Rp15.000</a>
-<a href="checkout.html?produk=Admin Panel&harga=20000">Admin Panel - Rp20.000</a>
-</div>
+<div class="product">
+<h4>Script Bot</h4>
+<p>Harga: Rp15.000</p>
+<button class="buy" onclick="beli('Script Bot')">Beli</button>
 </div>
 
+<h3>Saluran Kami</h3>
 
-<div class="produk">
-<h3>4️⃣ Nokos All Negara</h3>
-<div class="list">
-<a href="checkout.html?produk=Nokos Indonesia&harga=5000">Indonesia - Rp5.000</a>
-<a href="https://wa.me/6283180072584">Negara Lain Hubungi Admin</a>
-</div>
-</div>
+<a href="https://whatsapp.com/channel/0029VbCjQw8GE56pxtLIQa1c" target="_blank">
+<button class="channel">Gabung Saluran WhatsApp</button>
+</a>
 
+</div>
 
 <script>
 
+function login(){
+
+let user=document.getElementById("username").value;
+let pass=document.getElementById("password").value;
+
+if(user=="admin" && pass=="12345"){
+
+document.getElementById("loginBox").style.display="none";
+document.getElementById("marketBox").style.display="block";
+
+}else{
+
+alert("Username atau password salah");
+
+}
+
+}
+
 function logout(){
-alert("Logout berhasil")
-window.location.href="index.html"
+
+document.getElementById("marketBox").style.display="none";
+document.getElementById("loginBox").style.display="block";
+
+}
+
+function beli(produk){
+
+alert("Kamu memilih membeli "+produk);
+
 }
 
 </script>
