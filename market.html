@@ -3,45 +3,40 @@
 <head>
 <title>Market Dynan</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 
 body{
 font-family:sans-serif;
 background:#f2f2f2;
-text-align:center;
 margin:0;
+padding:20px;
+text-align:center;
 }
 
 .box{
 background:white;
-width:90%;
-max-width:400px;
+width:95%;
+max-width:700px;
 margin:auto;
-margin-top:40px;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
-input{
-width:90%;
-padding:10px;
-margin:5px;
-border-radius:6px;
-border:1px solid #ccc;
+h2{
+font-size:32px;
 }
 
 button{
-padding:10px 15px;
+padding:15px;
+font-size:18px;
 border:none;
-border-radius:8px;
+border-radius:10px;
 cursor:pointer;
-margin:5px;
-}
-
-.login{
-background:#4CAF50;
-color:white;
+margin-top:10px;
+width:100%;
 }
 
 .logout{
@@ -61,9 +56,19 @@ color:white;
 
 .product{
 border:1px solid #ddd;
-border-radius:8px;
-padding:10px;
-margin-top:10px;
+border-radius:12px;
+padding:20px;
+margin-top:20px;
+text-align:left;
+}
+
+.product h4{
+font-size:22px;
+margin:0;
+}
+
+.product p{
+font-size:18px;
 }
 
 </style>
@@ -71,45 +76,30 @@ margin-top:10px;
 
 <body>
 
-<!-- LOGIN -->
-<div class="box" id="loginBox">
-
-<h2>Login Market</h2>
-
-<input type="text" id="username" placeholder="Username">
-<br>
-<input type="password" id="password" placeholder="Password">
-<br>
-
-<button class="login" onclick="login()">Login</button>
-
-</div>
-
-<!-- MARKET -->
-<div class="box" id="marketBox" style="display:none">
+<div class="box">
 
 <h2>Market Dynan</h2>
 
 <button class="logout" onclick="logout()">Logout</button>
 
-<h3>Produk</h3>
+<h3>Produk Kami</h3>
 
 <div class="product">
 <h4>Panel Bot</h4>
 <p>Harga: Rp5.000</p>
-<button class="buy" onclick="beli('Panel Bot')">Beli</button>
+<button class="buy">Beli Sekarang</button>
 </div>
 
 <div class="product">
 <h4>Sewa Bot WhatsApp</h4>
 <p>Harga: Rp10.000</p>
-<button class="buy" onclick="beli('Sewa Bot WhatsApp')">Beli</button>
+<button class="buy">Beli Sekarang</button>
 </div>
 
 <div class="product">
 <h4>Script Bot</h4>
 <p>Harga: Rp15.000</p>
-<button class="buy" onclick="beli('Script Bot')">Beli</button>
+<button class="buy">Beli Sekarang</button>
 </div>
 
 <h3>Saluran Kami</h3>
@@ -122,35 +112,8 @@ margin-top:10px;
 
 <script>
 
-function login(){
-
-let user=document.getElementById("username").value;
-let pass=document.getElementById("password").value;
-
-if(user=="admin" && pass=="12345"){
-
-document.getElementById("loginBox").style.display="none";
-document.getElementById("marketBox").style.display="block";
-
-}else{
-
-alert("Username atau password salah");
-
-}
-
-}
-
 function logout(){
-
-document.getElementById("marketBox").style.display="none";
-document.getElementById("loginBox").style.display="block";
-
-}
-
-function beli(produk){
-
-alert("Kamu memilih membeli "+produk);
-
+window.location.href="index.html"
 }
 
 </script>
