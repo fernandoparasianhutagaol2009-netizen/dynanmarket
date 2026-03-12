@@ -1,68 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login Market Dynan</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynan Marketplace</title>
 
 <style>
 
 body{
+background:black;
 font-family:sans-serif;
-background:#f2f2f2;
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
-margin:0;
+color:white;
 }
 
 .box{
-background:white;
-width:90%;
-max-width:500px;
+background:#111;
 padding:40px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
+width:380px;
+border-radius:12px;
 text-align:center;
 }
 
-h2{
-font-size:28px;
-}
-
 input{
-width:95%;
-padding:14px;
+width:100%;
+padding:15px;
 margin:10px 0;
+border:none;
 border-radius:8px;
-border:1px solid #ccc;
 font-size:16px;
 }
 
 button{
 width:100%;
-padding:14px;
+padding:15px;
 border:none;
-border-radius:8px;
+border-radius:10px;
 font-size:18px;
 cursor:pointer;
 margin-top:10px;
-}
-
-.login{
-background:#4CAF50;
+background:#0d6efd;
 color:white;
 }
 
-.register{
-background:#2196F3;
-color:white;
-}
-
-.switch{
-background:none;
-color:#2196F3;
+.channel{
+background:#25D366;
 }
 
 </style>
@@ -72,82 +55,46 @@ color:#2196F3;
 
 <div class="box">
 
-<div id="loginBox">
+<h2>Dynan Marketplace 🛍</h2>
 
-<h2>Login</h2>
+<input type="text" id="user" placeholder="Username">
+<input type="password" id="pass" placeholder="Password">
 
-<input type="text" id="loginUser" placeholder="Username">
-<input type="password" id="loginPass" placeholder="Password">
+<button onclick="login()">Login</button>
 
-<button class="login" onclick="login()">Login</button>
+<a href="register.html">
+<button>Buat Akun</button>
+</a>
 
-<p>Belum punya akun?</p>
-<button class="switch" onclick="showRegister()">Buat Akun</button>
-
-</div>
-
-
-<div id="registerBox" style="display:none">
-
-<h2>Daftar Akun</h2>
-
-<input type="text" id="regUser" placeholder="Username baru">
-<input type="password" id="regPass" placeholder="Password baru">
-
-<button class="register" onclick="register()">Daftar</button>
-
-<p>Sudah punya akun?</p>
-<button class="switch" onclick="showLogin()">Login</button>
+<a href="https://whatsapp.com/channel/0029VbCjQw8GE56pxtLIQa1c" target="_blank">
+<button class="channel">📢 Join Saluran WhatsApp</button>
+</a>
 
 </div>
-
-</div>
-
 
 <script>
 
-function register(){
-
-let user=document.getElementById("regUser").value
-let pass=document.getElementById("regPass").value
-
-localStorage.setItem("user",user)
-localStorage.setItem("pass",pass)
-
-alert("Akun berhasil dibuat!")
-
-showLogin()
-
-}
-
 function login(){
 
-let user=document.getElementById("loginUser").value
-let pass=document.getElementById("loginPass").value
+let user=document.getElementById("user").value
+let pass=document.getElementById("pass").value
 
-let savedUser=localStorage.getItem("user")
-let savedPass=localStorage.getItem("pass")
-
-if(user==savedUser && pass==savedPass){
-
-window.location.href="market.html"
-
-}else{
-
-alert("Username atau password salah")
-
+if(user=="dynannotdev" && pass=="11092009"){
+window.location="admin.html"
+return
 }
 
+let users=JSON.parse(localStorage.getItem("users") || "[]")
+
+for(let i=0;i<users.length;i++){
+if(users[i].username==user && users[i].password==pass){
+window.location="market.html"
+return
+}
 }
 
-function showRegister(){
-document.getElementById("loginBox").style.display="none"
-document.getElementById("registerBox").style.display="block"
-}
+alert("Akun tidak ditemukan")
 
-function showLogin(){
-document.getElementById("loginBox").style.display="block"
-document.getElementById("registerBox").style.display="none"
 }
 
 </script>
