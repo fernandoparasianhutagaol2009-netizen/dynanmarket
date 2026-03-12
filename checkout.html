@@ -1,34 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Checkout</title>
+<title>Pembayaran QRIS</title>
+
+<style>
+
+body{
+background:black;
+color:white;
+font-family:sans-serif;
+text-align:center;
+padding:30px;
+}
+
+h2{
+font-size:34px;
+}
+
+.qris{
+width:100%;
+max-width:420px;
+height:auto;
+margin-top:25px;
+border-radius:15px;
+}
+
+button{
+padding:18px 25px;
+font-size:20px;
+border:none;
+border-radius:12px;
+background:#0d6efd;
+color:white;
+cursor:pointer;
+margin-top:25px;
+}
+
+.admin{
+background:#25D366;
+}
+
+</style>
+
 </head>
 
-<body style="text-align:center;font-family:sans-serif">
+<body>
 
-<h2>Checkout</h2>
+<h2>Pembayaran QRIS</h2>
 
-<p id="produk"></p>
-<p id="harga"></p>
+<p>Scan QRIS di bawah ini</p>
 
-<h3>Scan QRIS</h3>
+<img src="qris.jpg" class="qris">
 
-<img src="https://files.catbox.moe/10jisw.jpg" width="250">
+<br>
 
-<p>Setelah bayar hubungi admin</p>
+<button onclick="done()">Saya Sudah Bayar</button>
 
-<h4>Contact Admin</h4>
+<br>
 
-<a href="https://wa.me/6283180072584">WhatsApp</a><br>
-<a href="https://t.me/dynankb">Telegram</a>
+<a href="https://wa.me/6283180072584" target="_blank">
+<button class="admin">Hubungi Admin</button>
+</a>
 
 <script>
 
-document.getElementById("produk").innerText =
-"Produk: " + localStorage.getItem("product")
-
-document.getElementById("harga").innerText =
-"Harga: Rp" + localStorage.getItem("price")
+function done(){
+alert("Kirim bukti pembayaran ke admin")
+window.open("https://wa.me/6283180072584")
+}
 
 </script>
 
