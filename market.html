@@ -6,58 +6,132 @@
 <style>
 
 body{
+margin:0;
+font-family:sans-serif;
 background:black;
 color:white;
-font-family:sans-serif;
 text-align:center;
+transition:0.4s;
 }
 
-h1{
-font-size:34px;
-margin-top:30px;
+/* MODE PUTIH */
+
+.light{
+background:white;
+color:black;
 }
 
-.channel{
-background:#25D366;
-padding:15px 20px;
+/* LOGIN */
+
+.login{
+margin-top:120px;
+}
+
+input{
+padding:14px;
+margin:10px;
+width:230px;
+border-radius:8px;
+border:none;
+font-size:16px;
+}
+
+/* BUTTON */
+
+button{
+padding:12px 18px;
 border:none;
 border-radius:10px;
-font-size:18px;
+background:#0d6efd;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0a58ca;
+}
+
+/* PRODUK */
+
+.produk-btn{
+width:80%;
+max-width:600px;
+padding:16px;
+font-size:22px;
+background:#0d6efd;
+border:none;
+border-radius:12px;
 color:white;
 cursor:pointer;
+margin-top:25px;
+}
+
+.paket{
+display:none;
 margin-top:10px;
 }
 
-.produk{
-background:#111;
-width:90%;
-max-width:650px;
-margin:35px auto;
-padding:30px;
-border-radius:12px;
-}
-
-.list a{
+.paket a{
 display:block;
-background:#0d6efd;
-padding:18px;
-margin:10px 0;
-border-radius:10px;
+background:#111;
 color:white;
 text-decoration:none;
+padding:14px;
+margin:8px auto;
+width:70%;
+border-radius:10px;
 font-size:18px;
 }
 
-.logout{
+/* CONTACT ADMIN */
+
+.contact{
 position:fixed;
-top:20px;
 right:20px;
-background:red;
-border:none;
-padding:10px 15px;
-color:white;
-border-radius:8px;
+bottom:20px;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.contact img{
+width:55px;
+height:55px;
+border-radius:50%;
 cursor:pointer;
+}
+
+/* MODE BUTTON */
+
+.mode{
+position:fixed;
+left:20px;
+bottom:20px;
+}
+
+/* STAR BACKGROUND */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.2}
+to{opacity:1}
 }
 
 </style>
@@ -65,70 +139,210 @@ cursor:pointer;
 
 <body>
 
-<button class="logout" onclick="logout()">Logout</button>
+<div class="stars" id="stars"></div>
+
+<!-- LOGIN -->
+
+<div id="loginPage" class="login">
+
+<h1>Dynan Marketplace</h1>
+
+<h2>Login</h2>
+
+<input id="user" placeholder="Username"><br>
+<input id="pass" type="password" placeholder="Password"><br>
+
+<button onclick="login()">Login</button>
+
+<p>Buat akun?</p>
+<a href="register.html">Register</a>
+
+</div>
+
+<!-- MARKET -->
+
+<div id="market" style="display:none">
 
 <h1>Dynan Marketplace 🛍</h1>
 
-<a href="https://whatsapp.com/channel/0029VbCjQw8GE56pxtLIQa1c" target="_blank">
-<button class="channel">📢 Join Saluran WhatsApp</button>
+<button onclick="logout()">Logout</button>
+
+<h2>Produk Kami</h2>
+
+<!-- SEWA BOT -->
+
+<button class="produk-btn" onclick="toggle('sewa')">
+1️⃣ Sewa Bot WA Grup ▼
+</button>
+
+<div class="paket" id="sewa">
+
+<a href="#" onclick="buy('Sewa Bot 1 Bulan','10000')">1 Bulan - Rp10.000</a>
+<a href="#" onclick="buy('Sewa Bot 2 Bulan','20000')">2 Bulan - Rp20.000</a>
+<a href="#" onclick="buy('Sewa Bot 3 Bulan','30000')">3 Bulan - Rp30.000</a>
+<a href="#" onclick="buy('Sewa Bot 4 Bulan','40000')">4 Bulan - Rp40.000</a>
+<a href="#" onclick="buy('Sewa Bot 5 Bulan','50000')">5 Bulan - Rp50.000</a>
+<a href="#" onclick="buy('Sewa Bot Permanen','300000')">Permanen - Rp300.000</a>
+
+</div>
+
+<!-- JADI BOT -->
+
+<button class="produk-btn" onclick="toggle('jadibot')">
+2️⃣ Jadi Bot WA Grup ▼
+</button>
+
+<div class="paket" id="jadibot">
+
+<a href="#" onclick="buy('Jadi Bot 1 Bulan','5000')">1 Bulan - Rp5.000</a>
+<a href="#" onclick="buy('Jadi Bot 2 Bulan','10000')">2 Bulan - Rp10.000</a>
+<a href="#" onclick="buy('Jadi Bot 3 Bulan','15000')">3 Bulan - Rp15.000</a>
+<a href="#" onclick="buy('Jadi Bot 4 Bulan','20000')">4 Bulan - Rp20.000</a>
+<a href="#" onclick="buy('Jadi Bot 5 Bulan','25000')">5 Bulan - Rp25.000</a>
+<a href="#" onclick="buy('Jadi Bot Permanen','150000')">Permanen - Rp150.000</a>
+
+</div>
+
+<!-- PANEL -->
+
+<button class="produk-btn" onclick="toggle('panel')">
+3️⃣ Panel Pterodactyl ▼
+</button>
+
+<div class="paket" id="panel">
+
+<a href="#" onclick="buy('Panel 1GB','1000')">1GB - Rp1.000</a>
+<a href="#" onclick="buy('Panel 2GB','2000')">2GB - Rp2.000</a>
+<a href="#" onclick="buy('Panel 3GB','3000')">3GB - Rp3.000</a>
+<a href="#" onclick="buy('Panel 4GB','4000')">4GB - Rp4.000</a>
+<a href="#" onclick="buy('Panel 5GB','5000')">5GB - Rp5.000</a>
+<a href="#" onclick="buy('Panel 10GB','10000')">10GB - Rp10.000</a>
+
+<a href="#" onclick="buy('Panel Unlimited','12000')">Unlimited - Rp12.000</a>
+<a href="#" onclick="buy('Reseller Panel','15000')">Reseller - Rp15.000</a>
+<a href="#" onclick="buy('Admin Panel','20000')">Admin Panel - Rp20.000</a>
+
+</div>
+
+<!-- NOKOS -->
+
+<button class="produk-btn" onclick="toggle('nokos')">
+4️⃣ Nokos All Negara ▼
+</button>
+
+<div class="paket" id="nokos">
+
+<a href="#" onclick="buy('Nokos Indonesia','5000')">Indonesia - Rp5.000</a>
+
+<a href="https://wa.me/6283180072584">
+Negara Lain Hubungi Admin
 </a>
 
-
-<div class="produk">
-<h3>Sewa Bot WA Grup</h3>
-<div class="list">
-<a href="checkout.html">1 Bulan - Rp10.000</a>
-<a href="checkout.html">2 Bulan - Rp20.000</a>
-<a href="checkout.html">3 Bulan - Rp30.000</a>
-<a href="checkout.html">4 Bulan - Rp40.000</a>
-<a href="checkout.html">5 Bulan - Rp50.000</a>
-<a href="checkout.html">Permanen - Rp300.000</a>
-</div>
 </div>
 
+<br><br>
 
-<div class="produk">
-<h3>Jadi Bot WA Grup</h3>
-<div class="list">
-<a href="checkout.html">1 Bulan - Rp5.000</a>
-<a href="checkout.html">2 Bulan - Rp10.000</a>
-<a href="checkout.html">3 Bulan - Rp15.000</a>
-<a href="checkout.html">4 Bulan - Rp20.000</a>
-<a href="checkout.html">5 Bulan - Rp25.000</a>
-<a href="checkout.html">Permanen - Rp150.000</a>
-</div>
+<!-- SALURAN -->
+
+<a href="https://whatsapp.com/channel/0029VbCjQw8GE56pxtLIQa1c">
+<button>📢 Join Saluran WhatsApp</button>
+</a>
+
 </div>
 
+<!-- CONTACT ADMIN -->
 
-<div class="produk">
-<h3>Panel Pterodactyl</h3>
-<div class="list">
-<a href="checkout.html">1GB - Rp1.000</a>
-<a href="checkout.html">2GB - Rp2.000</a>
-<a href="checkout.html">3GB - Rp3.000</a>
-<a href="checkout.html">4GB - Rp4.000</a>
-<a href="checkout.html">5GB - Rp5.000</a>
-<a href="checkout.html">10GB - Rp10.000</a>
-<a href="checkout.html">Unlimited - Rp12.000</a>
-<a href="checkout.html">Reseller - Rp15.000</a>
-<a href="checkout.html">Admin Panel - Rp20.000</a>
-</div>
+<div class="contact">
+
+<a href="https://wa.me/6283180072584">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+
+<a href="https://t.me/dynankb">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+</a>
+
 </div>
 
+<!-- MODE -->
 
-<div class="produk">
-<h3>Nokos All Negara</h3>
-<div class="list">
-<a href="checkout.html">Indonesia - Rp5.000</a>
-<a href="https://wa.me/6283180072584">Negara Lain Hubungi Admin</a>
-</div>
-</div>
-
+<button class="mode" onclick="mode()">☀ / 🌙</button>
 
 <script>
 
+/* LOGIN */
+
+function login(){
+
+let user=document.getElementById("user").value
+let pass=document.getElementById("pass").value
+
+if(user=="dynannotdev" && pass=="11092009"){
+
+document.getElementById("loginPage").style.display="none"
+document.getElementById("market").style.display="block"
+
+return
+}
+
+let users=JSON.parse(localStorage.getItem("users") || "[]")
+
+for(let i of users){
+
+if(i.username==user && i.password==pass){
+
+document.getElementById("loginPage").style.display="none"
+document.getElementById("market").style.display="block"
+
+return
+}
+
+}
+
+alert("Login gagal")
+
+}
+
+/* LOGOUT */
+
 function logout(){
-window.location="index.html"
+location.reload()
+}
+
+/* TOGGLE PRODUK */
+
+function toggle(id){
+
+let menu=document.getElementById(id)
+
+if(menu.style.display=="block"){
+menu.style.display="none"
+}else{
+menu.style.display="block"
+}
+
+}
+
+/* MODE */
+
+function mode(){
+document.body.classList.toggle("light")
+}
+
+/* STARS */
+
+let stars=document.getElementById("stars")
+
+for(let i=0;i<120;i++){
+
+let star=document.createElement("div")
+star.className="star"
+
+star.style.top=Math.random()*100+"%"
+star.style.left=Math.random()*100+"%"
+
+stars.appendChild(star)
+
 }
 
 </script>
