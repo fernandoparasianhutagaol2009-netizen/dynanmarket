@@ -2,19 +2,67 @@
 <html>
 <head>
 <title>Buat Akun</title>
+
+<style>
+
+body{
+background:black;
+font-family:sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+}
+
+.box{
+background:#111;
+padding:40px;
+width:380px;
+border-radius:12px;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#0d6efd;
+border:none;
+border-radius:10px;
+font-size:18px;
+color:white;
+cursor:pointer;
+}
+
+</style>
+
 </head>
 
-<body style="text-align:center;font-family:sans-serif">
+<body>
+
+<div class="box">
 
 <h2>Buat Akun Member</h2>
 
-<input type="text" id="user" placeholder="Username"><br><br>
-<input type="password" id="pass" placeholder="Password"><br><br>
+<input type="text" id="user" placeholder="Username">
+<input type="password" id="pass" placeholder="Password">
 
 <button onclick="register()">Buat Akun</button>
 
-<p>Sudah punya akun?</p>
-<a href="index.html">Login</a>
+<br><br>
+
+<a href="index.html" style="color:white">Kembali Login</a>
+
+</div>
 
 <script>
 
