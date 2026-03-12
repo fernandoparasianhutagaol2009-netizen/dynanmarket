@@ -7,8 +7,6 @@
 
 <style>
 
-/* BODY */
-
 body{
 margin:0;
 font-family:sans-serif;
@@ -17,14 +15,10 @@ color:white;
 text-align:center;
 }
 
-/* MODE TERANG */
-
 .light{
 background:white;
 color:black;
 }
-
-/* CONTAINER */
 
 .container{
 width:100%;
@@ -32,8 +26,6 @@ max-width:900px;
 margin:auto;
 padding:20px;
 }
-
-/* JUDUL */
 
 h1{
 font-size:9vw;
@@ -43,8 +35,6 @@ margin-top:40px;
 h2{
 font-size:6vw;
 }
-
-/* LOGIN */
 
 .login{
 margin-top:12vh;
@@ -59,8 +49,6 @@ border:none;
 border-radius:14px;
 }
 
-/* BUTTON */
-
 button{
 width:95%;
 padding:22px;
@@ -72,14 +60,9 @@ color:white;
 cursor:pointer;
 }
 
-/* PRODUK */
-
 .produk-btn{
 margin-top:25px;
-font-size:5vw;
 }
-
-/* PAKET */
 
 .paket{
 display:none;
@@ -97,14 +80,10 @@ text-decoration:none;
 border-radius:12px;
 }
 
-/* SALURAN */
-
 .channel button{
 background:#25D366;
 margin-top:40px;
 }
-
-/* CONTACT ADMIN */
 
 .contact{
 position:fixed;
@@ -121,8 +100,6 @@ height:70px;
 border-radius:50%;
 }
 
-/* MODE BUTTON */
-
 .mode{
 position:fixed;
 left:20px;
@@ -131,8 +108,6 @@ width:auto;
 padding:10px 16px;
 font-size:20px;
 }
-
-/* BACKGROUND BINTANG */
 
 .stars{
 position:fixed;
@@ -156,6 +131,26 @@ from{opacity:0.2}
 to{opacity:1}
 }
 
+#qrisBox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+align-items:center;
+justify-content:center;
+flex-direction:column;
+z-index:999;
+}
+
+#qrisBox img{
+width:90%;
+max-width:450px;
+border-radius:14px;
+}
+
 </style>
 </head>
 
@@ -174,12 +169,11 @@ to{opacity:1}
 <h2>Login</h2>
 
 <input id="user" placeholder="Username">
-
 <input id="pass" type="password" placeholder="Password">
 
 <button onclick="login()">Login</button>
 
-<p style="font-size:20px;margin-top:20px;">Belum punya akun?</p>
+<p style="font-size:20px;">Belum punya akun?</p>
 
 <a href="register.html" style="font-size:20px;color:#0d6efd;">Buat Akun</a>
 
@@ -203,12 +197,12 @@ Sewa Bot WA Grup
 
 <div id="sewa" class="paket">
 
-<a href="#">1 Bulan - Rp10.000</a>
-<a href="#">2 Bulan - Rp20.000</a>
-<a href="#">3 Bulan - Rp30.000</a>
-<a href="#">4 Bulan - Rp40.000</a>
-<a href="#">5 Bulan - Rp50.000</a>
-<a href="#">Permanen - Rp300.000</a>
+<a onclick="buy()">1 Bulan - Rp10.000</a>
+<a onclick="buy()">2 Bulan - Rp20.000</a>
+<a onclick="buy()">3 Bulan - Rp30.000</a>
+<a onclick="buy()">4 Bulan - Rp40.000</a>
+<a onclick="buy()">5 Bulan - Rp50.000</a>
+<a onclick="buy()">Permanen - Rp300.000</a>
 
 </div>
 
@@ -220,12 +214,12 @@ Jadi Bot WA Grup
 
 <div id="jadibot" class="paket">
 
-<a href="#">1 Bulan - Rp5.000</a>
-<a href="#">2 Bulan - Rp10.000</a>
-<a href="#">3 Bulan - Rp15.000</a>
-<a href="#">4 Bulan - Rp20.000</a>
-<a href="#">5 Bulan - Rp25.000</a>
-<a href="#">Permanen - Rp150.000</a>
+<a onclick="buy()">1 Bulan - Rp5.000</a>
+<a onclick="buy()">2 Bulan - Rp10.000</a>
+<a onclick="buy()">3 Bulan - Rp15.000</a>
+<a onclick="buy()">4 Bulan - Rp20.000</a>
+<a onclick="buy()">5 Bulan - Rp25.000</a>
+<a onclick="buy()">Permanen - Rp150.000</a>
 
 </div>
 
@@ -237,15 +231,15 @@ Panel Pterodactyl
 
 <div id="panel" class="paket">
 
-<a href="#">1GB - Rp1.000</a>
-<a href="#">2GB - Rp2.000</a>
-<a href="#">3GB - Rp3.000</a>
-<a href="#">4GB - Rp4.000</a>
-<a href="#">5GB - Rp5.000</a>
-<a href="#">10GB - Rp10.000</a>
-<a href="#">Unlimited - Rp12.000</a>
-<a href="#">Reseller - Rp15.000</a>
-<a href="#">Admin Panel - Rp20.000</a>
+<a onclick="buy()">1GB - Rp1.000</a>
+<a onclick="buy()">2GB - Rp2.000</a>
+<a onclick="buy()">3GB - Rp3.000</a>
+<a onclick="buy()">4GB - Rp4.000</a>
+<a onclick="buy()">5GB - Rp5.000</a>
+<a onclick="buy()">10GB - Rp10.000</a>
+<a onclick="buy()">Unlimited - Rp12.000</a>
+<a onclick="buy()">Reseller - Rp15.000</a>
+<a onclick="buy()">Admin Panel - Rp20.000</a>
 
 </div>
 
@@ -257,7 +251,7 @@ Nokos All Negara
 
 <div id="nokos" class="paket">
 
-<a href="#">Indonesia - Rp5.000</a>
+<a onclick="buy()">Indonesia - Rp5.000</a>
 
 <a href="https://wa.me/6283180072584">
 Negara Lain Hubungi Admin
@@ -276,6 +270,20 @@ Negara Lain Hubungi Admin
 </div>
 
 </div>
+
+</div>
+
+<!-- QRIS -->
+
+<div id="qrisBox">
+
+<h2>Pembayaran QRIS</h2>
+
+<img src="qris.jpg">
+
+<br><br>
+
+<button onclick="tutupQRIS()">Tutup</button>
 
 </div>
 
@@ -350,6 +358,16 @@ menu.style.display="none"
 menu.style.display="block"
 }
 
+}
+
+/* QRIS */
+
+function buy(){
+document.getElementById("qrisBox").style.display="flex"
+}
+
+function tutupQRIS(){
+document.getElementById("qrisBox").style.display="none"
 }
 
 /* MODE */
