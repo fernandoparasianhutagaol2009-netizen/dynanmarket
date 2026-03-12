@@ -149,6 +149,7 @@ z-index:999;
 width:90%;
 max-width:450px;
 border-radius:14px;
+margin-top:20px;
 }
 
 </style>
@@ -279,7 +280,7 @@ Negara Lain Hubungi Admin
 
 <h2>Pembayaran QRIS</h2>
 
-<img src="qris.jpg">
+<img src="https://files.catbox.moe/10jisw.jpg">
 
 <br><br>
 
@@ -304,8 +305,6 @@ Negara Lain Hubungi Admin
 <button class="mode" onclick="mode()">☀ / 🌙</button>
 
 <script>
-
-/* LOGIN */
 
 function login(){
 
@@ -340,13 +339,9 @@ alert("Login gagal")
 
 }
 
-/* LOGOUT */
-
 function logout(){
 location.reload()
 }
-
-/* TOGGLE PRODUK */
 
 function toggle(id){
 
@@ -360,8 +355,6 @@ menu.style.display="block"
 
 }
 
-/* QRIS */
-
 function buy(){
 document.getElementById("qrisBox").style.display="flex"
 }
@@ -370,13 +363,9 @@ function tutupQRIS(){
 document.getElementById("qrisBox").style.display="none"
 }
 
-/* MODE */
-
 function mode(){
 document.body.classList.toggle("light")
 }
-
-/* BINTANG */
 
 let stars=document.getElementById("stars")
 
